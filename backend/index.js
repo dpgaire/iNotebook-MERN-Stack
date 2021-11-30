@@ -10,6 +10,10 @@ app.use(express.json());
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/note", require("./routes/note"));
 
-app.listen(port, () => {
-  console.log(`iNotebook backend listening at http://localhost:${port}`);
-});
+app.listen(
+  port,
+  { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true },
+  () => {
+    console.log(`iNotebook backend listening at http://localhost:${port}`);
+  }
+);

@@ -4,12 +4,14 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Navbar from "./components/Navbar";
 import NoteState from "./Context/Notes/NoteState";
+import Alert from "./components/Alert";
 function App() {
   return (
     <>
       <NoteState>
         <Router>
           <Navbar />
+          <Alert message="This is awsome tutorials!" />
           <div className="container my-3">
             <Routes>
               <Route exact path="/" element={<Home />} />

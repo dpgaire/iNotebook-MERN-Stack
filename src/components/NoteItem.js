@@ -7,7 +7,11 @@ const NoteItem = (props) => {
     <div className="col-md-3">
       <div className="card my-4">
         <div className="card-body">
-          <h5 className="card-title">{noteData.title}</h5>
+          <div className="d-flex justify-content-between align-items-center">
+            <h5 className="card-title">{noteData.title}</h5>
+            <i className="fas fa-trash-alt"></i>
+            <i className="fas fa-edit"></i>
+          </div>
           <p className="card-text">{noteData.description}</p>
         </div>
       </div>

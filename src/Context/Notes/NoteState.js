@@ -4,73 +4,116 @@ import NoteContext from "./noteContext";
 const NoteState = (props) => {
   const noteInitialState = [
     {
-      _id: "61a4e6248fafe2334d294daed",
-      title: "titleupdated",
-      description: "the desc updated",
-      tag: "helonupdated",
-      date: "2021-11-29T14:39:32.691Z",
+      _id: "61a6e24ed069d12fpd32cb986",
+      user: "61a6e1c6d069d12fd32cb983",
+      title: "React to knock out",
+      description:
+        "The react is the most beutiful thing i ever seen in my life",
+      tag: "The tag is React",
+      date: "2021-12-01T02:47:42.295Z",
       __v: 0,
     },
     {
-      _id: "61a4e6403fecb3bb57b589293",
-      title: "the title",
-      description: "the descriptipn",
-      tag: "thetag",
-      date: "2021-11-29T14:40:00.415Z",
+      _id: "61a6e24ed069d12fd32icb986",
+      user: "61a6e1c6d069d12fd32cb983",
+      title: "React to knock out",
+      description:
+        "The react is the most beutiful thing i ever seen in my life",
+      tag: "The tag is React",
+      date: "2021-12-01T02:47:42.295Z",
       __v: 0,
     },
     {
-      _id: "61a4e67e3fec7b3bb7b589295",
-      title: "thedefault",
-      description: "the desc",
-      tag: "",
-      date: "2021-11-29T14:41:02.186Z",
+      _id: "61a6e24edr069d12fd32cb986",
+      user: "61a6e1c6d069d12fd32cb983",
+      title: "React to knock out",
+      description:
+        "The react is the most beutiful thing i ever seen in my life",
+      tag: "The tag is React",
+      date: "2021-12-01T02:47:42.295Z",
       __v: 0,
     },
     {
-      _id: "61a4e4a3f8bd5a39ae1970427",
-      title: "thedefault",
-      description: "the desc",
-      tag: "helo",
-      date: "2021-11-29T14:57:03.459Z",
+      _id: "61a6e24edk069d12fd32cb986",
+      user: "61a6e1c6d069d12fd32cb983",
+      title: "React to knock out",
+      description:
+        "The react is the most beutiful thing i ever seen in my life",
+      tag: "The tag is React",
+      date: "2021-12-01T02:47:42.295Z",
       __v: 0,
     },
     {
-      _id: "61a4e62487fafe234d294daed",
-      title: "titleupdated",
-      description: "the desc updated",
-      tag: "helonupdated",
-      date: "2021-11-29T14:39:32.691Z",
+      _id: "61a6e24ed06t9d12fd32cb986",
+      user: "61a6e1c6d069d12fd32cb983",
+      title: "React to knock out",
+      description:
+        "The react is the most beutiful thing i ever seen in my life",
+      tag: "The tag is React",
+      date: "2021-12-01T02:47:42.295Z",
       __v: 0,
     },
     {
-      _id: "61a4e6403fecb33bb7b589293",
-      title: "the title",
-      description: "the descriptipn",
-      tag: "thetag",
-      date: "2021-11-29T14:40:00.415Z",
+      _id: "61a6e24ed06y9d12fd32cb986",
+      user: "61a6e1c6d069d12fd32cb983",
+      title: "React to knock out",
+      description:
+        "The react is the most beutiful thing i ever seen in my life",
+      tag: "The tag is React",
+      date: "2021-12-01T02:47:42.295Z",
       __v: 0,
     },
     {
-      _id: "61a4e67e3fecb3bb77b589295",
-      title: "thedefault",
-      description: "the desc",
-      tag: "",
-      date: "2021-11-29T14:41:02.186Z",
+      _id: "61a6e24ed069dt12fd32cb986",
+      user: "61a6e1c6d069d12fd32cb983",
+      title: "React to knock out",
+      description:
+        "The react is the most beutiful thing i ever seen in my life",
+      tag: "The tag is React",
+      date: "2021-12-01T02:47:42.295Z",
       __v: 0,
     },
     {
-      _id: "61a4ea3f8bd5a39ae51970427",
-      title: "thedefault",
-      description: "the desc",
-      tag: "helo",
-      date: "2021-11-29T14:57:03.459Z",
+      _id: "61a6e24ed069d12fdh32cb986",
+      user: "61a6e1c6d069d12fd32cb983",
+      title: "React to knock out",
+      description:
+        "The react is the most beutiful thing i ever seen in my life",
+      tag: "The tag is React",
+      date: "2021-12-01T02:47:42.295Z",
       __v: 0,
     },
   ];
   const [notes, setNotes] = useState(noteInitialState);
+  //Add Notes
+  const addNotes = (title, description, tag) => {
+    //TODO API Call
+    console.log("Note added sucessfullly");
+    const note = [
+      {
+        _id: "61a6e24eds06ff9d12fdth32cb986",
+        user: "61a6e1c6d069d12fd32cb983",
+        title: title,
+        description: description,
+        tag: tag,
+        date: "2021-12-01T02:47:42.295Z",
+        __v: 0,
+      },
+    ];
+    setNotes(notes.concat(note));
+  };
+  //Update Notes
+  const updateNotes = () => {};
+  //Delete Notes
+  const deleteNotes = (id) => {
+    //TODO API Call
+    const newNotes = notes.filter((note) => {
+      return note._id !== id;
+    });
+    setNotes(newNotes);
+  };
   return (
-    <NoteContext.Provider value={{ notes, setNotes }}>
+    <NoteContext.Provider value={{ notes, addNotes, updateNotes, deleteNotes }}>
       {props.children}
     </NoteContext.Provider>
   );
